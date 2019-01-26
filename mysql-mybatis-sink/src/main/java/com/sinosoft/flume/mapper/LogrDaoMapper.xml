@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.lsh.dao.UserDao">
+	<select id="search" resultType="org.lsh.vo.User">
+		select * from user
+	</select>
+	<insert id="insertUser" parameterType="org.lsh.vo.User">
+		insert into user(name,pwd)
+		value(#{name},#{pwd})
+	</insert>
+	<delete id="deleteUser" parameterType="Integer">
+		delete from user where id=#{id}
+	</delete>
+</mapper>
